@@ -13,7 +13,7 @@ class ItemsController extends Controller
     {
         $query = items::with('games');
 
-        if ($request->filled('games')) {
+        if ($request->filled('game_id')) {
             $query->where('game_id', $request->game_id);
         }
 
@@ -54,23 +54,25 @@ class ItemsController extends Controller
     }
 
     //Edit data
-    public function edit(Request $request, items $items)
-    {
+    public function edit($id)
+    {   
+        $items = items::findOrFail($id);
         $games = games::all();
         return view('items.edit', compact('items','games'));
 
     }
 
     //Update data
-    public function update(Request $request, items $items)
+    public function update(Request $request, $id)
     {
+        $item = items::findOrFail($id);
         $validateData = $request->validate([
             'game_id' => 'required|exists:games,id',
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
         ]);
 
-        $items->update($validateData);
+        $item->update($validateData);
         return redirect()->route('items.index')->with('success', 'Item berhasil diupdate.');
     }
 

@@ -8,7 +8,7 @@
                 <h5 class="mb-0">Edit Item Game</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('items.update', $item->id) }}" method="POST">
+                <form action="{{ route('items.update', $items->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     
@@ -16,7 +16,7 @@
                         <label class="form-label">Pilih Game</label>
                         <select name="game_id" class="form-select @error('game_id') is-invalid @enderror">
                             @foreach($games as $game)
-                                <option value="{{ $game->id }}" {{ (old('game_id') ?? $item->game_id) == $game->id ? 'selected' : '' }}>
+                                <option value="{{ $game->id }}" {{ (old('game_id') ?? $items->game_id) == $game->id ? 'selected' : '' }}>
                                     {{ $game->name }} ({{ $game->publisher }})
                                 </option>
                             @endforeach
@@ -26,13 +26,13 @@
 
                     <div class="mb-3">
                         <label class="form-label">Nama Item</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?? $item->name }}">
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?? $items->name }}">
                         @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Harga (Rp)</label>
-                        <input type="number" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('price') ?? $item->price }}">
+                        <input type="number" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ old('price') ?? $items->price }}">
                         @error('price') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 

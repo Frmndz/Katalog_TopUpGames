@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\games;
 
 class items extends Model
 {
@@ -15,8 +16,8 @@ class items extends Model
         'price',
     ];
 
-    public function game()
+    public function games()
     {
-        return $this->belongsTo(games::class);
+        return $this->belongsTo(games::class, 'game_id');
     }
 }
