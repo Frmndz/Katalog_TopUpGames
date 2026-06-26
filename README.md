@@ -59,7 +59,7 @@ Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini di komputer lokal:
 6.  Jalankan Migrasi Database
     Perintah ini akan membuat struktur tabel beserta relasinya.
 
-    ``Bash
+    ```Bash
     php artisan migrate
     ```
 
