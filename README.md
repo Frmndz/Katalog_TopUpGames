@@ -76,6 +76,8 @@ Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini di komputer lokal:
 
 
     📸 Tangkapan Layar
+    
+    
     ![Halaman Utama](image/1.png)
 
     ![Halaman Tambah Item Game](image/2.png)
