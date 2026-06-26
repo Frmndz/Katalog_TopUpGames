@@ -5,7 +5,10 @@
     <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="mb-0">Daftar Item Game</h4>
-            <a href="{{ route('items.create') }}" class="btn btn-primary">Tambah Item</a>
+            <div class="d-flex gap-2">
+                <a href="{{ route('games.create') }}" class="btn btn-primary">Tambah Game</a>
+                <a href="{{ route('items.create') }}" class="btn btn-primary">Tambah Item</a>
+            </div>
         </div>
 
         <form action="{{ route('items.index') }}" method="GET" class="mb-3">
