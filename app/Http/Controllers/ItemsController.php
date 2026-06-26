@@ -6,7 +6,7 @@ use App\Models\items;
 use App\Models\games;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class ItemsController extends Controller
 {
     //Menampilkan daftar serta filter
     public function index(Request $request)
