@@ -77,8 +77,9 @@ class ItemsController extends Controller
     }
 
     //Delete data
-    public function destroy(items $items)
+    public function destroy($id)
     {
+        $items = items::findOrFail($id);
         $items->delete();
         return redirect()->route('items.index')->with('success', 'Item berhasil dihapus.');
     }

@@ -38,7 +38,7 @@
                     @forelse($items as $index => $item)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $item->game->name }}</td>
+                            <td>{{ $item->games->name }}</td>
                             <td>{{ $item->name }}</td>
                             <td>Rp {{ number_format($item->price, 0, ',', '.') }}</td>
                             <td class="text-center">
